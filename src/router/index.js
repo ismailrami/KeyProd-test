@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Dashboard from '../views/Dashboard.vue'
-import Tracking from '../views/Tracking.vue'
+import Dashboard from '../components/Dashboard.vue'
+import Tracking from '../components/Tracking.vue'
+import ProductDetail from '../components/ProductDetail'
 
 Vue.use(VueRouter)
 
@@ -16,14 +17,12 @@ const routes = [
     name: 'Tracking',
     component: Tracking
   },
-  //{
-    //path: '/tracking',
-    //name: 'Tracking',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    //component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  //}
+ { 
+    path: '/product/:orderId',
+    name: 'Product',
+    component: ProductDetail
+  },
+ 
 ]
 
 const router = new VueRouter({

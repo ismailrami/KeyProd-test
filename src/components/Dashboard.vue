@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TableList :tableData="orders" :tableHeader="orderHeader" ></TableList>
+    <TableList :tableData="orders" :tableHeader="orderHeader"  pa-10></TableList>
   </div>
 </template>
 
@@ -17,14 +17,15 @@
         orderHeader: [
             {text:'N° de commande', value:"number"},
             {text:'Client', value:"client"},
-            {text:'Date de commande', value:"date_order"},
-            {text:'Etat de commande', value:"state"}
+            {text:'Date de commande', value:"date_arrival"},
+            {text:'Etat de commande', value:"state"},
+            {text:'Action', value:"control", sortable: false }
           ]
       };
     },
     async created(){
       try { 
-        const res = await axios.get('http://localhost:5600/Orders');
+        const res = await axios.get('http://localhost:5600/Orders?_embed=Products');
         this.orders = res.data;
         //console.log(this.orders);
       } catch (e) {

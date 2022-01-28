@@ -7,7 +7,7 @@
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
-            KeyPROG
+            KeyPROD
           </v-list-item-title>
           <v-list-item-subtitle>
             Distribution
@@ -57,7 +57,7 @@
     drawer: null,
     items: [
           { title: 'Dashboard', icon: 'mdi-playlist-minus' , to:'/'},
-          { title: 'tracking', icon: 'mdi-truck' , to:'tracking'},
+          { title: 'tracking', icon: 'mdi-truck' , to:'/tracking'},
         ]
     }),
     
